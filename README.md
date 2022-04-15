@@ -16,6 +16,13 @@ Reference: [Artificial Intelligence: A Modern Approach](http://aima.cs.berkeley.
 5. A transition model describing the result of action a applied in state s: result(s,a)
 6. A cost function cost(s,a,s’)which returns the non-negative one-step cost of traveling from state s to s’ by applying a.  The cost function is only defined if s’is a successor state of s.
 
+## Infrastructure for search algorithms
+1. Data structure to keep track of the search tree.
+2. For each n node: there must be a structure to contain:
+   1. n.state = state space for node
+   2. n.parent = node in search tree that generated this node
+   3. n.action = action applied to parent to generate this node
+   4. n.path-cost = the cost traditionally denoted, g(n), path from initial state to this node 
 ## Graph-Search [Pseudocode](https://github.com/aimacode/aima-pseudocode/blob/master/md/Tree-Search-and-Graph-Search.md)
 > other [pseudocode](https://github.com/aimacode/aima-pseudocode/tree/master/md) examples from the book.
 
