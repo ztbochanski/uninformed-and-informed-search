@@ -22,7 +22,8 @@ Reference: [Artificial Intelligence: A Modern Approach](http://aima.cs.berkeley.
    1. n.state = state space for node
    2. n.parent = node in search tree that generated this node
    3. n.action = action applied to parent to generate this node
-   4. n.path-cost = the cost traditionally denoted, g(n), path from initial state to this node 
+   4. n.path-cost = the cost traditionally denoted, g(n), path from initial state to this node
+
 ## Graph-Search [Pseudocode](https://github.com/aimacode/aima-pseudocode/blob/master/md/Tree-Search-and-Graph-Search.md)
 > other [pseudocode](https://github.com/aimacode/aima-pseudocode/tree/master/md) examples from the book.
 
@@ -52,7 +53,7 @@ end
 ```
 
 ```rb
-expand(problem, parent)
+chile_node(problem, parent)
   s = parent.state
  nodes = []
 
@@ -77,6 +78,12 @@ end
 - `iddfs` for iterative deepening depth-first search
 - `astar` for A-Star search
 
+## Chickens and Wolves Specifics
+### Initial State Example:
+|Side of River Bank|Number of Chickens|Number of Wolves|Boat Position (bool)|
+|------------------|------------------|----------------|--------------------|
+|Left Bank|0|0|0|
+|Right Bank|3|3|1|
 ## I. Uninformed Search
 >no information about states except generation of successive state and recognizing a goal state.
 
