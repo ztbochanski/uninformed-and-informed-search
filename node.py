@@ -14,7 +14,7 @@ class Node:
         path cost from initial state to this node
     """
 
-    def __init__(self, state, parent, action, path_cost):
+    def __init__(self, state, parent=None, action=None, path_cost=None):
         self.state = state
         self.parent = parent
         self.action = action
