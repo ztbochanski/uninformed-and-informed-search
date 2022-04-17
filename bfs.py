@@ -39,9 +39,9 @@ def solution(child, problem):
 
 def breadth_first_search(problem):
     node = Node(problem.initial_state, path_cost=0)
-
+    expansion_counter = 0
     if problem.goal_test(node.get_state()):
-        return "reached goal, return solution path"
+        return solution(node, problem), expansion_counter
     else:
         frontier = []  # Init FIFO Queue
         nodes = []
@@ -49,7 +49,6 @@ def breadth_first_search(problem):
         nodes.append(node)
         explored = set()  # Init empty set
 
-        expansion_counter = 0
         while len(frontier) != 0:
             current_node = nodes.pop(0)
             current_node_state = frontier.pop(0)
