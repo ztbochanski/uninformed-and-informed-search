@@ -26,13 +26,16 @@ def breadth_first_search(problem):
             # process each action
             for action in problem.actions.available:
                 child = child_node(problem, current_node, action)
-                if problem.negative_check(child.get_state()) and problem.wolves_check(child.get_state()):
-                    if child.get_state() not in explored or child.get_state() not in frontier:
-                        if problem.goal_test(child.get_state()):
-                            return problem.solution(child, problem), expansion_counter
-                        expansion_counter += 1
-                        frontier.append(child.get_state())
-                        nodes.append(child)
+                if problem.negative_check(child.get_state()):
+                    if problem.wolves_check(child.get_state()):
+                        if child.get_state() not in explored or child.get_state() not in frontier:
+                            if problem.goal_test(child.get_state()):
+                                return problem.solution(child, problem), expansion_counter
+                            expansion_counter += 1
+                            frontier.append(child.get_state())
+                            nodes.append(child)
+                    else:
+                        print(child.get_state())
 
 
 def child_node(problem, parent, action):
