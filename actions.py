@@ -18,8 +18,8 @@ class Actions:
 def main():
     """test calling actions
     """
-    state = (0, 0, 0,  # <- LEFT RIVER BANK
-             3, 3, 1)  # <- RIGHT RIVER BANK
+    state = (1, 0, 1,  # <- LEFT RIVER BANK
+             2, 3, 0)  # <- RIGHT RIVER BANK
     print(Actions().available["action1"].do(state))
 
 
