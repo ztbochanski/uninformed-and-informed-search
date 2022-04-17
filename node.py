@@ -49,18 +49,14 @@ def main():
     """test node
     """
 
-    initial_state = [0, 0, 0,
-                     3, 3, 1]
-
     # actions
-
     # 1. Put one chicken in the boat
     # 2. Put two chickens in the boat
     # 3. Put one wolf in the boat
     # 4. Put one wolf and one chicken in the boat
     # 5. Put two wolves in the boat
 
-    node1 = Node(initial_state, "Fake", "Fake", "0")
+    node1 = Node("fake state", "fake parent", "fake action", "fake cost")
     print(node1.get_state())
 
 
