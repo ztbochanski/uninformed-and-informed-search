@@ -21,6 +21,9 @@ class Problem:
     def goal_test(self, state):
         return self.goal_state == state
 
+    def do_action(self, state):
+        return f"fake action state: {state}"
+
 
 def main():
     """test problem
