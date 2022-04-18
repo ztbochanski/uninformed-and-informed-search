@@ -9,11 +9,11 @@ def depth_first_search(problem):
     if problem.goal_test(node.get_state()):
         return problem.solution(node, problem), expansion_counter
     else:
-        frontier = []  # Init FIFO Queue
+        frontier = []  # Init LIFO Queue
         nodes = []
 
-        frontier.append(node.get_state())
-        nodes.append(node)
+        frontier.insert(0, node.get_state())
+        nodes.insert(0, node)
 
         explored = set()  # Init empty set
 
@@ -31,8 +31,8 @@ def depth_first_search(problem):
                         if problem.goal_test(child.get_state()):
                             return problem.solution(child, problem), expansion_counter
                         expansion_counter += 1
-                        frontier.append(child.get_state())
-                        nodes.append(child)
+                        frontier.insert(0, child.get_state())
+                        nodes.insert(0, child)
 
 
 def child_node(problem, parent, action):
@@ -42,7 +42,7 @@ def child_node(problem, parent, action):
 
 
 def main():
-    """test breadth first search
+    """test depth first search
 
     Args:
         initial state
@@ -53,9 +53,9 @@ def main():
     """
 
     initial_state = (0, 0, 0,
-                     11, 7, 1)
+                     3, 3, 1)
 
-    goal_state = (11, 7, 1,
+    goal_state = (3, 3, 1,
                   0, 0, 0)
 
     actions = Actions()
